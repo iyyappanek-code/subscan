@@ -42,7 +42,7 @@ export default function App() {
     setPage("scanning");setError("");
     const form=new FormData();form.append("file",file);
     try{
-      const res=await fetch("http://localhost:3001/api/scan",{method:"POST",body:form});
+      const res=await fetch("http:subscan.railway.internal",{method:"POST",body:form});
       const json=await res.json();
       if(json.error) throw new Error(json.error);
       setData(json);setPage("results");
